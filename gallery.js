@@ -9,6 +9,7 @@ function draw(){
  $('versions').replaceChildren(...data.filter(g=>!g.archive).map(g=>{const b=document.createElement('button');b.textContent=g.name;b.setAttribute('aria-pressed',String(g===group));const small=document.createElement('small');small.textContent=g.screens.length+' screen'+(g.screens.length===1?'':'s');b.append(small);b.onclick=()=>{group=g;step=0;draw()};return b}));
  $('archives').value=group.archive?group.id:'';
  $('version-name').textContent=group.name;$('description').textContent=group.desc;
+ $('theme').disabled=group.id==='soc-direct';$('theme').value=group.id==='soc-direct'?'dark':theme;$('theme').title=group.id==='soc-direct'?'This concept retains the dark SOC Control environment.':'';
  $('screens').replaceChildren(...group.screens.map((s,i)=>{const b=document.createElement('button');b.textContent=s.name;b.setAttribute('aria-current',String(i===step));b.onclick=()=>{step=i;draw()};return b}));
  if(group.archive){const sel=document.createElement('select');sel.setAttribute('aria-label','Choose an earlier screen');group.screens.forEach((s,i)=>{const o=document.createElement('option');o.value=i;o.textContent=s.name;sel.append(o)});sel.value=step;sel.onchange=()=>{step=Number(sel.value);draw()};$('screens').replaceChildren(sel)}
  const screen=group.screens[step],url=new URL(base+screen.url,location.href);url.searchParams.set('theme',theme);if(group.layout)url.searchParams.set('layout',group.layout);
