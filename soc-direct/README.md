@@ -6,13 +6,13 @@ I interpreted the feedback as two focused states: choosing a Learning Path direc
 
 Reviewed origin/main at 51946181e: PathsExperience.tsx, PathsExperience.module.css, NoActiveSelection.module.css, SelectionConsoleOverlay.module.css, and docs/guides/terminology.md. The reviewed styles match the local checkout.
 
-The background is the existing SOC Control asset `apps/web-player/public/assets/paths-experimental/soc-monitor-closeup.png`. I chose this instead of soc-fallback.webp because the latter includes world-map imagery on its displays. The concept keeps the workstation, server racks, cyan lighting, dark squared monitor panels, and actual Rajdhani / Roboto Mono typography. Gold identifies selection and the main action.
+The background image has been removed. Both states now use an expanded 1840 × 928 content panel within the 1920 × 1080 canvas, with larger cards, module rows, typography, and actions. The concept retains dark squared SOC panels and Rajdhani / Roboto Mono typography. Gold identifies selection and the main action.
 
 ## Intentional changes
 
 - No global navigation, sidebar, app tabs, world-map action, globe, rank, XP, or explainer video.
 - Start with Learning Path choices, without a preceding Program-versus-Path chooser.
-- The selected path shows its modules and selected-module detail inside the SOC monitor.
+- The selected path shows its modules and selected-module detail across the available screen area.
 - Change learning path is a contextual action, not global navigation.
 - View Briefing opens a modal. Begin Activity ends the preview without creating a live attempt.
 - Path names, durations, modules, and prerequisite states are illustrative sample data, not a claimed live catalog or reproduction of production behavior.
