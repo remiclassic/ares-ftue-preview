@@ -1,0 +1,79 @@
+[
+  [
+    "01-agreement",
+    "Agreement",
+    "Signed-in gate · only when acceptance is required",
+    "PlayerShell preserves Agreement → required password rotation → first-time identity. No added welcome page.",
+    "apps/web-player/src/features/eula/components/EulaAcceptancePage.tsx"
+  ],
+  [
+    "02-password",
+    "Set a new password",
+    "Signed-in gate · conditional",
+    "Only shown when passwordChangeRequiredAt is set and password changes are supported. SSO bypasses this gate.",
+    "apps/web-player/src/features/settings/components/ForcePasswordChangePrompt.tsx"
+  ],
+  [
+    "03-identity",
+    "Confirm identity",
+    "Signed-in gate · first-time name confirmation",
+    "Keep the assigned name or explicitly open the rename form, matching main.",
+    "apps/web-player/src/features/paths/components/DisplayNamePrompt.tsx"
+  ],
+  [
+    "04-map-empty",
+    "Map without an active path",
+    "/world-map · first visit with no active path",
+    "The map route shows its no-active-path state and links to SOC Control. Existing active paths go straight to the map in section 09.",
+    "apps/web-player/src/features/world-map-experimental/LiveWorldMapPreview.tsx"
+  ],
+  [
+    "05-soc",
+    "SOC Control",
+    "/programs · no selection",
+    "Preserve the SOC entry and Choose program or path action. It opens the selection console.",
+    "apps/web-player/src/features/paths-experimental/NoActiveSelection.tsx"
+  ],
+  [
+    "06-route",
+    "Choose training type",
+    "/programs · selection console",
+    "Preserve both Program and Single learning path. Close returns to the SOC; Back returns to the route choice.",
+    "apps/web-player/src/features/paths-experimental/SelectionConsoleOverlay.tsx"
+  ],
+  [
+    "07-browse",
+    "Explore and activate",
+    "/programs · selection console",
+    "Retain browsing, filters, details, and activation. The toggle demonstrates the two supported branches with illustrative content.",
+    "apps/web-player/src/features/paths-experimental/PathsExperience.tsx"
+  ],
+  [
+    "08-active-soc",
+    "Active training in SOC",
+    "/programs · after activation",
+    "Activation closes the console and returns to the SOC. Entering the map is a separate action; there is no added Ready screen.",
+    "apps/web-player/src/features/paths-experimental/PathsExperience.tsx"
+  ],
+  [
+    "09-world-map",
+    "Satellite Overwatch",
+    "/world-map · active learning path",
+    "Keep the map and selected-module details. Available, locked, and completed modules remain distinct; launch follows the module action policy.",
+    "apps/web-player/src/features/world-map-experimental/OverwatchScreen.tsx"
+  ],
+  [
+    "10-briefing",
+    "Module launch and briefing",
+    "/world-map · launch dialog",
+    "The briefing belongs to the launch session, not an added standalone page. Preparing, retry, resume, and multiplayer states are data-dependent.",
+    "apps/web-player/src/features/world-map-experimental/useLiveModuleLaunch.ts"
+  ],
+  [
+    "11-feedback",
+    "Feedback",
+    "Optional · feature-flagged launcher",
+    "Feedback is available after signed-in gates when enabled by the server. It is not a required onboarding step.",
+    "apps/web-player/src/features/shared/components/PlayerShell.tsx"
+  ]
+]
