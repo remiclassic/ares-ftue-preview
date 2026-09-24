@@ -1,0 +1,249 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal branch · 04-map</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="overwatch.css"><link rel="stylesheet" href="personal.css"></head><body><div class="shell" data-environment="false" data-ftue="map" data-globe-theme="standard" data-ready="true" data-trajectory="true" id="app">
+<img alt="Earth viewed from orbit" id="globe-scene" src="assets/globe.png"/>
+<img alt="" id="campaignOverlay" src="assets/overlay.png"/>
+<div aria-hidden="true" class="track-overlay" data-idle="true" data-stage="tracking" id="trackOverlay">
+<div class="track-reticle" style="left: 630.078px; top: 703.478px;">
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+</div>
+<div class="track-ticks-x"></div>
+<div class="track-ticks-y"></div>
+<div class="track-target" style="left: 702.078px; top: 617.478px;">
+<span>TARGET</span>
+<strong id="trackTarget">01</strong>
+</div>
+<div class="track-telemetry">
+<span aria-hidden="true" class="track-channel"></span>
+<div class="track-status">
+<i></i>
+<strong id="trackPhase">Tracking</strong>
+</div>
+<div class="track-readout">
+<span>View center</span>
+<strong id="trackCenter">3.82°N / 18.00°E</strong>
+</div>
+<div class="track-readout">
+<span>Field of view</span>
+<strong id="trackFov">101.4° × 57.0°</strong>
+</div>
+<div class="track-readout">
+<span>Magnification</span>
+<strong id="trackMag">1.0×</strong>
+</div>
+</div>
+</div>
+<header class="player-nav">
+<div class="player-nav-id">
+<a aria-label="Project Ares" class="player-brand" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="3"></circle>
+<circle cx="19" cy="5" r="2"></circle>
+<path d="M10.4 21.9a10 10 0 0 0 9.8-13.2"></path>
+<path d="M13.5 2.1a10 10 0 0 0-9.8 13.2"></path>
+</svg>
+<strong>PROJECT ARES</strong>
+</a>
+<span class="player-location">SURFACE OBSERVATION</span>
+</div>
+<nav aria-label="Player navigation" class="player-links">
+<a href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path><path d="M9 21v-8h6v8"></path></svg>
+<span>Home</span>
+</a>
+<a aria-current="page" href="04-map.html">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"></polygon><line x1="9" x2="9" y1="3" y2="18"></line><line x1="15" x2="15" y1="6" y2="21"></line></svg>
+<span>Map</span>
+</a>
+<a href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path><line x1="9" x2="16" y1="7" y2="7"></line><line x1="9" x2="14" y1="11" y2="11"></line></svg>
+<span>Catalog</span>
+</a>
+<a href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="12" rx="1" width="20" x="2" y="6"></rect><path d="M8 12h4M10 10v4"></path><circle cx="16" cy="11" fill="currentColor" r="0.8" stroke="none"></circle><circle cx="18" cy="13" fill="currentColor" r="0.8" stroke="none"></circle></svg>
+<span>Games</span>
+</a>
+<a href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+<span>Certs</span>
+</a>
+<a href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="7" width="4" x="2" y="14"></rect><rect height="12" width="4" x="10" y="9"></rect><rect height="17" width="4" x="18" y="4"></rect></svg>
+<span>Leaderboard</span>
+</a>
+</nav>
+<div class="player-tools">
+<button class="player-tool" data-preview-only="true" id="liveEvents" type="button">Live Events</button>
+<button class="player-tool" data-go="01-choose.html" data-preview-only="true" id="socControl" type="button">SOC Control</button>
+<i aria-hidden="true" class="player-tools-split"></i>
+<a aria-label="Player dashboard" class="player-icon" href="#" title="Player dashboard">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<rect height="9" rx="1" width="7" x="3" y="3"></rect>
+<rect height="5" rx="1" width="7" x="14" y="3"></rect>
+<rect height="9" rx="1" width="7" x="14" y="12"></rect>
+<rect height="5" rx="1" width="7" x="3" y="16"></rect>
+</svg>
+</a>
+<a aria-label="Settings" class="player-icon" href="#" title="Settings">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</a>
+</div>
+</header>
+<div class="left-cluster" id="leftCluster">
+<aside aria-label="Operator" class="operator-plate" id="operatorPlate">
+<div aria-hidden="true" class="op-crest">
+<svg fill="none" viewbox="0 0 48 48">
+<polygon fill="rgba(0,211,243,0.06)" points="24,2 43,13 43,35 24,46 5,35 5,13"></polygon>
+<polygon fill="none" points="24,2 43,13 43,35 24,46 5,35 5,13" stroke="rgba(0,211,243,0.18)" stroke-width="1.5"></polygon>
+<polygon fill="none" points="24,2 43,13 43,35 24,46 5,35 5,13" stroke="rgba(0,211,243,0.9)" stroke-dasharray="131.8" stroke-dashoffset="98.85" stroke-linecap="round" stroke-width="2.5"></polygon>
+<line stroke="rgba(0,211,243,0.9)" stroke-width="1.5" x1="24" x2="24" y1="2" y2="5.5"></line>
+<line stroke="rgba(0,211,243,0.9)" stroke-width="1.5" x1="24" x2="24" y1="42.5" y2="46"></line>
+<polygon fill="none" points="24,7 38,15.5 38,32.5 24,41 10,32.5 10,15.5" stroke="rgba(0,211,243,0.1)" stroke-width="0.75"></polygon>
+</svg>
+<span>4</span>
+</div>
+<div class="op-identity">
+<p class="op-level">Level 4</p>
+<p class="op-role">Preview operator</p>
+</div>
+</aside>
+<div class="view-tools">
+<div aria-label="Map view" class="view-seg" role="group">
+<button class="orbit-return" data-preview-only="true" id="viewWorld" type="button">World</button>
+<button class="orbit-return" data-preview-only="true" id="viewEnvironment" type="button">Environment</button>
+</div>
+<button class="preview-route" data-preview-only="true" id="previewRoute" type="button">Preview route</button>
+</div>
+</div>
+<header class="hud" id="hud">
+<div class="hud-grid">
+<div>
+<span>PATH</span>
+<strong id="hudPath">Cybersecurity Basics</strong>
+</div>
+<div>
+<span>PROGRESS</span>
+<strong id="hudProgress">0 of 5</strong>
+</div>
+<div>
+<span>MODULE</span>
+<strong id="hudModule">01  ·  The threat landscape</strong>
+</div>
+<div>
+<span>VIEW</span>
+<strong id="hudView">WORLD</strong>
+</div>
+</div>
+<div class="hud-readout">
+<span id="hudCoords">3.823  18.000</span>
+<span id="hudAlt">ALT  9772 KM</span>
+<span id="hudPhase">PHASE  OBSERVE</span>
+<span id="hudSensor">SENSOR  RECONSTRUCTION</span>
+</div>
+</header>
+<aside aria-label="Module overview" class="detail-panel" id="detailPanel">
+<header class="detail-head">
+<p class="detail-heading">
+<span id="panelStatus">UP NEXT</span>
+<span id="panelIndex">01</span>
+</p>
+<p class="detail-type" id="panelType">Video</p>
+<h2 id="panelTitle">The threat landscape</h2>
+<div aria-hidden="true" class="detail-dial">
+<svg viewbox="0 0 120 120">
+<circle class="detail-dial-track" cx="60" cy="60" r="46"></circle>
+<circle class="detail-dial-value" cx="60" cy="60" id="panelDial" pathlength="100" r="46" stroke-dasharray="0 100"></circle>
+</svg>
+<div class="detail-dial-readout">
+<strong id="panelPct">0<small>%</small></strong>
+<span id="panelFrac">0 / 5</span>
+</div>
+</div>
+<p class="detail-meta">
+<span id="panelDiff">Entry</span>
+<span id="panelTime">15 min</span>
+<span id="panelXp">300 XP</span>
+</p>
+</header>
+<section aria-label="Overview" class="detail-overview">
+<h3>Overview</h3>
+<p id="panelOverview">Explore the threat landscape as part of Cybersecurity Basics. This module develops your understanding of security fundamentals.</p>
+</section>
+<div class="detail-actions">
+<button class="detail-brief" data-go="03-briefing.html" data-preview-only="true" id="viewBriefing" type="button">View briefing</button>
+<button class="detail-launch" data-begin="true" data-preview-only="true" id="panelLaunch" type="button">Begin activity</button>
+</div>
+</aside>
+<button class="site-callout" data-go="03-briefing.html" data-preview-only="true" data-side="right" id="siteCallout" style="left: 630.078px; top: 703.478px;" type="button">
+<span class="site-callout-kicker" id="calloutKicker">Current module</span>
+<strong id="calloutTitle">The threat landscape</strong>
+<span class="site-callout-meta" id="calloutMeta">Video  ·  15 min  ·  300 XP</span>
+<span class="site-callout-go" id="calloutGo">Start</span>
+</button>
+<footer class="trajectory" id="trajectory">
+<div class="rail-float" id="railFloat" style="left: 169.195px;">
+<p class="rail-caption">
+<strong id="railFloatTitle">The threat landscape</strong>
+<em id="railFloatRole">Current module</em>
+</p>
+<button class="orbit-launch" data-go="03-briefing.html" data-preview-only="true" id="orbitLaunch" type="button">
+<span class="orbit-launch-copy">
+<span class="orbit-launch-kicker" id="orbitLaunchKicker">Current module</span>
+<strong id="orbitLaunchTitle">The threat landscape</strong>
+</span>
+<span class="orbit-launch-go" id="orbitLaunchGo">Start</span>
+</button>
+</div>
+<div class="traj-head">
+<div aria-label="Learning path progress" class="path-progress">
+<span class="path-progress-label">Learning path progress</span>
+<span class="path-progress-count" id="pathCount">0 of 5 modules complete</span>
+</div>
+<div aria-label="Module navigation" class="rail-controls" role="group">
+<div class="rail-step">
+<button aria-label="Previous module" data-preview-only="true" disabled="" id="railPrev" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15 18l-6-6 6-6"></path>
+</svg>
+</button>
+<span aria-hidden="true"><b id="railStepIndex">01</b> / <i id="railStepTotal">5</i></span>
+<button aria-label="Next module" data-preview-only="true" id="railNext" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9 18l6-6-6-6"></path>
+</svg>
+</button>
+</div>
+<button aria-label="Jump to current" class="rail-ctrl" data-preview-only="true" id="railJump" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<circle cx="12" cy="12" r="2.2"></circle>
+<path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path>
+</svg>
+<span>Jump to current</span>
+</button>
+<button aria-label="All modules" class="rail-ctrl is-all" data-preview-only="true" id="railAll" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24">
+<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path>
+</svg>
+<span>All modules</span>
+<em id="railAllCount">5</em>
+</button>
+<button class="rail-more" data-preview-only="true" hidden="" id="railOverflow" type="button">
+<b id="railMoreCount">+0</b>
+<span>Modules</span>
+</button>
+</div>
+<p class="traj-focus" hidden="" id="railFocus"></p>
+</div>
+<div class="traj-scroller">
+<ol aria-label="Learning path modules" class="traj-track" id="roster"><li><button aria-pressed="true" class="traj-node is-available is-selected" data-id="basics-0" data-preview-only="true" data-status="available" type="button"><i aria-hidden="true" class="traj-dot"></i><span>01</span></button></li><li><button aria-pressed="false" class="traj-node is-locked" data-id="basics-1" data-preview-only="true" data-status="locked" type="button"><i aria-hidden="true" class="traj-dot"></i><span>02</span></button></li><li><button aria-pressed="false" class="traj-node is-locked" data-id="basics-2" data-preview-only="true" data-status="locked" type="button"><i aria-hidden="true" class="traj-dot"></i><span>03</span></button></li><li><button aria-pressed="false" class="traj-node is-locked" data-id="basics-3" data-preview-only="true" data-status="locked" type="button"><i aria-hidden="true" class="traj-dot"></i><span>04</span></button></li><li><button aria-pressed="false" class="traj-node is-locked" data-id="basics-4" data-preview-only="true" data-status="locked" type="button"><i aria-hidden="true" class="traj-dot"></i><span>05</span></button></li></ol>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 of 5 modules complete" class="path-bar" id="pathBar" role="progressbar">
+<span id="pathBarFill" style="width: 0%;"></span>
+</div>
+</footer>
+</div><script src="personal.js"></script><div class="map-credit">Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community · Rendered with CesiumJS</div></body></html>
